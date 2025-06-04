@@ -4,7 +4,7 @@ public class SimilarityChecker {
         int lengthA = A.length();
         int lengthB = B.length();
         int gap = 0;
-        int result = 0;
+        double result = 0;
 
         if (lengthA > lengthB) {
             if (lengthA >= lengthB * 2) {
@@ -12,7 +12,7 @@ public class SimilarityChecker {
             }
 
             gap = lengthA - lengthB;
-            result = (1 - gap/lengthB) * 60;
+            result = (1 - (double) gap /lengthB) * 60;
 
         } else if (lengthA < lengthB) {
             if (lengthB >= lengthA * 2) {
@@ -20,11 +20,11 @@ public class SimilarityChecker {
             }
 
             gap = lengthB - lengthA;
-            result = (1 - gap/lengthA) * 60;
+            result = (1 - (double) gap /lengthA) * 60;
         } else {
             return 60;
         }
 
-        return result;
+        return (int) result;
     }
 }
