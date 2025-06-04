@@ -14,25 +14,21 @@ class SimilarityCheckerTest {
 
     @Test
     void checkStringLengthPerfectScore() {
-        int score = checker.getLengthScore("ASD", "DSA");
-        assertEquals(60, score);
+        assertEquals(60, checker.getLengthScore("ASD", "DSA"));
     }
 
     @Test
     void checkStringLengthPartialPoints() {
-        int score = checker.getLengthScore("AAABB", "BAA");
-        assertEquals(20, score);
+        assertEquals(20, checker.getLengthScore("AAABB", "BAA"));
     }
 
     @Test
     void checkStringLengthPartialPoints2() {
-        int score = checker.getLengthScore("AA", "AAE");
-        assertEquals(30, score);
+        assertEquals(30, checker.getLengthScore("AA", "AAE"));
     }
 
     @Test
     void checkStringLength0Point() {
-        int score = checker.getLengthScore("ASD", "DSA");
-        assertEquals(60, score);
+        assertEquals(0, checker.getLengthScore("A", "BB"));
     }
 }
