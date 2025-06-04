@@ -1,6 +1,7 @@
 public class SimilarityChecker {
 
     private static final int MAX_SCORE = 60;
+    private static final int MIN_SCORE = 0;
 
     public int getLengthScore(String A, String B) {
         int lengthA = A.length();
@@ -18,7 +19,7 @@ public class SimilarityChecker {
         int smallNumberLength = Math.min(lengthA, lengthB);
 
         if (bigNumberLength >= smallNumberLength * 2) {
-            return 0;
+            return MIN_SCORE;
         }
 
         int gap = bigNumberLength - smallNumberLength;
